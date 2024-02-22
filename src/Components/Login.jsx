@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import "./Login.css"
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { NavLink, useNavigate } from 'react-router-dom'
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { provider } from '../firebaseConfig';
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { provider, providerfb } from '../firebaseConfig';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -33,7 +33,33 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
+} 
 
+const onclkfb = () => {
+  const auth = getAuth();
+signInWithPopup(auth, provider)
+.then((result) => {
+  // The signed-in user info.
+  const user = result.user;
+
+  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+  const credential = FacebookAuthProvider.credentialFromResult(result);
+  const accessToken = credential.accessToken;
+
+  // IdP data available using getAdditionalUserInfo(result)
+  // ...
+})
+.catch((error) => {
+  // Handle Errors here.
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  // The email of the user's account used.
+  const email = error.customData.email;
+  // The AuthCredential type that was used.
+  const credential = FacebookAuthProvider.credentialFromError(error);
+
+  // ...
+});
 } 
 
   const onLogin = (e) => {
@@ -76,6 +102,10 @@ signInWithPopup(auth, provider)
         <center> 
                 <button style={{"marginTop" : "200px"}}  
                 onClick={onclk} >Sign In with Google</button> 
+            </center> 
+            <center> 
+                <button   
+                onClick={onclkfb} >Sign In with Facebook</button> 
             </center> 
       </div>
     </div>
