@@ -1,0 +1,31 @@
+.container, form{
+    display: flex;
+    background-color: cadetblue;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+    justify-content: center;
+}
+
+.main{
+    position: absolute;
+    left: 25vw;
+    top: 30vh;
+}
+
+input{
+    padding: 8px 25px;
+    margin: 8px;
+    border-radius: 25px;
+    border: none;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: slategray;
+    color: white;
+}

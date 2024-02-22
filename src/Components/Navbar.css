@@ -1,0 +1,24 @@
+.Nav{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin: 25px;
+}
+
+.nav{
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    width: 100vw;
+    top: 0%;
+}
+
+li{
+    list-style: none;
+    gap: 20px;
+    color: white;
+}
+
+li:hover{
+    color: rgb(252, 0, 0);
+    cursor: pointer;
+}

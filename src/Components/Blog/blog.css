@@ -1,0 +1,15 @@
+.blogs{
+    position: absolute;
+    top: 10vh;
+}
+
+.blog{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 30vw;
+    height: 50vh;
+    border: 2px solid black;
+    align-items: center;
+}

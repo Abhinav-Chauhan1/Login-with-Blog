@@ -1,0 +1,23 @@
+.cont{
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+    background-color: cadetblue;
+    width: 60vw;
+    height: 50vh;
+}
+
+.signup, form{
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    width: 60vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.message{
+    font-size: small;
+    color: rgb(29, 26, 26);
+}
